@@ -19,6 +19,11 @@ public class Main {
             throw new RuntimeException("Some issue with task");
 
         });
+        Future<Integer> future4 = service.submit(()->{
+            Thread.sleep(4000);
+           return 400;
+
+        });
 
         try
         {
@@ -26,6 +31,9 @@ public class Main {
             System.out.println(result1);
             Integer result2 = future2.get();
             System.out.println(result2);
+
+            Integer result4 = future4.get();
+            System.out.println(result4);
             Integer result3 = future3.get();
             System.out.println(result3);
 
