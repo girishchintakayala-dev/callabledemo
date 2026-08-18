@@ -24,6 +24,11 @@ public class Main {
            return 400;
 
         });
+        Future<Integer> future5= service.submit(()->{
+            Thread.sleep(4000);
+            return 500;
+
+        });
 
         try
         {
@@ -34,6 +39,8 @@ public class Main {
 
             Integer result4 = future4.get();
             System.out.println(result4);
+            Integer result5 = future5.get();
+            System.out.println(result5);
             Integer result3 = future3.get();
             System.out.println(result3);
 
